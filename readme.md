@@ -5,6 +5,6 @@
     <br/>
 </div>
 <div>
-  [![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=davidacunha)](https://github.com/davidacunha/github-readme-stats)
+  ![My GitHub stats](https://github-readme-stats.vercel.app/api?username=davidacunha&count_private=true)
 </div>
 <div align="center">
