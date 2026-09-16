@@ -282,13 +282,15 @@ h1, h2, h3 {
 
 .role-title-wrap {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
 
 .role-chevron {
-  font-size: 11px;
-  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--accent);
+  font-weight: 700;
   display: inline-block;
   transition: transform 0.2s ease;
 }
