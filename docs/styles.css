@@ -1,39 +1,45 @@
 :root {
-  --bg: #fbfaf8;
+  --bg: #f5f5fb;
   --surface: #ffffff;
-  --text: #1c1c1e;
-  --text-muted: #5b5d63;
-  --accent: #1d6f5e;
-  --accent-soft: #e4f2ee;
-  --border: #e6e3dd;
-  --tag-bg: #f1efe9;
-  --shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 8px 24px rgba(20, 20, 20, 0.04);
+  --text: #14132b;
+  --text-muted: #56547a;
+  --accent: #3d38b1;
+  --accent-soft: #e6e5f8;
+  --border: #e2e0f2;
+  --tag-bg: #edecf9;
+  --linkedin-bg: #3d38b1;
+  --linkedin-fg: #ffffff;
+  --shadow: 0 1px 2px rgba(20, 20, 40, 0.05), 0 8px 24px rgba(20, 20, 40, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14151a;
-    --surface: #1b1c22;
-    --text: #ecebe8;
-    --text-muted: #a3a4ab;
-    --accent: #5fc9ac;
-    --accent-soft: #1e2e2a;
-    --border: #2a2b32;
-    --tag-bg: #23242b;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --bg: #000069;
+    --surface: #0f0e7b;
+    --text: #f1f0ff;
+    --text-muted: #b6b3e9;
+    --accent: #8b85f2;
+    --accent-soft: #1f1c8d;
+    --border: #2e2a9f;
+    --tag-bg: #1f1c8d;
+    --linkedin-bg: #8b85f2;
+    --linkedin-fg: #000069;
+    --shadow: 0 1px 2px rgba(0, 0, 20, 0.35), 0 8px 24px rgba(0, 0, 20, 0.45);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #14151a;
-  --surface: #1b1c22;
-  --text: #ecebe8;
-  --text-muted: #a3a4ab;
-  --accent: #5fc9ac;
-  --accent-soft: #1e2e2a;
-  --border: #2a2b32;
-  --tag-bg: #23242b;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --bg: #000069;
+  --surface: #0f0e7b;
+  --text: #f1f0ff;
+  --text-muted: #b6b3e9;
+  --accent: #8b85f2;
+  --accent-soft: #1f1c8d;
+  --border: #2e2a9f;
+  --tag-bg: #1f1c8d;
+  --linkedin-bg: #8b85f2;
+  --linkedin-fg: #000069;
+  --shadow: 0 1px 2px rgba(0, 0, 20, 0.35), 0 8px 24px rgba(0, 0, 20, 0.45);
 }
 
 body { transition: background 0.2s ease, color 0.2s ease; }
@@ -167,6 +173,33 @@ h1, h2, h3 {
 .hero-meta a:hover { color: var(--accent); border-color: var(--accent); }
 
 .dot { margin: 0 8px; opacity: 0.5; }
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  background: var(--linkedin-bg);
+  color: var(--linkedin-fg) !important;
+  border: none !important;
+  border-radius: 999px;
+  padding: 5px 12px 5px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.linkedin-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.linkedin-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
 
 /* Blocks */
 .block {
