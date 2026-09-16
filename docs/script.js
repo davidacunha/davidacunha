@@ -271,3 +271,45 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
 });
 
 render(detectDefaultLang());
+
+/* Theme toggle */
+const themeToggle = document.getElementById("theme-toggle");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function currentTheme() {
+  const explicit = document.documentElement.getAttribute("data-theme");
+  if (explicit) return explicit;
+  return systemDark.matches ? "dark" : "light";
+}
+
+function updateToggleIcon() {
+  themeToggle.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
+}
+
+function applyTheme(theme, persist) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (persist) {
+    try { localStorage.setItem("theme-pref", theme); } catch (e) {}
+  }
+  updateToggleIcon();
+}
+
+(function initTheme() {
+  let saved = null;
+  try { saved = localStorage.getItem("theme-pref"); } catch (e) {}
+  if (saved === "light" || saved === "dark") {
+    applyTheme(saved, false);
+  } else {
+    updateToggleIcon();
+  }
+})();
+
+themeToggle.addEventListener("click", () => {
+  applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+});
+
+systemDark.addEventListener("change", () => {
+  let saved = null;
+  try { saved = localStorage.getItem("theme-pref"); } catch (e) {}
+  if (!saved) updateToggleIcon();
+});
