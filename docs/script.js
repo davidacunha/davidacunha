@@ -19,8 +19,8 @@ const I18N = {
     skills: [
       "IA Generativa", "Gestão de Stakeholders", "Arquitetura de Dados",
       "Product Discovery", "Metodologias Ágeis (Scrum/Kanban)", "Priorização de Backlog",
-      "Roadmapping", "Especificações Técnicas / PRDs", "WhatsApp Business API",
-      "Automação de Workflows (n8n)", "Jira & Confluence"
+      "Roadmapping", "Especificações Técnicas / PRDs", "Integrações",
+      "Automação de Workflows", "Jira & Confluence"
     ],
     languages: [
       { name: "Português", level: "Nativo" },
@@ -86,8 +86,8 @@ const I18N = {
     skills: [
       "Generative AI", "Stakeholder Management", "Data Architecture",
       "Product Discovery", "Agile Methodologies (Scrum/Kanban)", "Backlog Prioritization",
-      "Roadmapping", "Technical Specs / PRDs", "WhatsApp Business API",
-      "Workflow Automation (n8n)", "Jira & Confluence"
+      "Roadmapping", "Technical Specs / PRDs", "Integrations",
+      "Workflow Automation", "Jira & Confluence"
     ],
     languages: [
       { name: "Portuguese", level: "Native" },
@@ -153,8 +153,8 @@ const I18N = {
     skills: [
       "IA Generativa", "Gestión de Stakeholders", "Arquitectura de Datos",
       "Product Discovery", "Metodologías Ágiles (Scrum/Kanban)", "Priorización de Backlog",
-      "Roadmapping", "Especificaciones Técnicas / PRDs", "WhatsApp Business API",
-      "Automatización de Flujos (n8n)", "Jira & Confluence"
+      "Roadmapping", "Especificaciones Técnicas / PRDs", "Integraciones",
+      "Automatización de Flujos", "Jira & Confluence"
     ],
     languages: [
       { name: "Portugués", level: "Nativo" },
