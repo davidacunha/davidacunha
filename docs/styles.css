@@ -260,6 +260,45 @@ h1, h2, h3 {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+.role-head.toggleable {
+  cursor: pointer;
+  user-select: none;
+  margin: -4px -6px 2px;
+  padding: 4px 6px;
+  transition: background 0.15s ease;
+}
+
+.role-head.toggleable:hover {
+  background: var(--accent-soft);
+}
+
+.role-head.toggleable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.role-title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.role-chevron {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.role.collapsed .role-chevron {
+  transform: rotate(-90deg);
+}
+
+.role.collapsed ul {
+  display: none;
 }
 
 .role-title {

@@ -209,18 +209,33 @@ function renderRoles(containerId, roles) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
   roles.forEach(role => {
+    const hasBullets = role.bullets && role.bullets.length > 0;
     const div = document.createElement("div");
     div.className = "role";
-    const bulletsHtml = role.bullets.length
+    const bulletsHtml = hasBullets
       ? `<ul>${role.bullets.map(b => `<li>${b}</li>`).join("")}</ul>`
       : "";
     div.innerHTML = `
-      <div class="role-head">
-        <span class="role-title">${role.title}</span>
+      <div class="role-head${hasBullets ? " toggleable" : ""}"${hasBullets ? ' role="button" tabindex="0" aria-expanded="true"' : ""}>
+        <span class="role-title-wrap">
+          ${hasBullets ? '<span class="role-chevron">▾</span>' : ""}
+          <span class="role-title">${role.title}</span>
+        </span>
         <span class="role-dates">${role.dates}</span>
       </div>
       ${bulletsHtml}
     `;
+    if (hasBullets) {
+      const head = div.querySelector(".role-head");
+      const toggle = () => {
+        const collapsed = div.classList.toggle("collapsed");
+        head.setAttribute("aria-expanded", String(!collapsed));
+      };
+      head.addEventListener("click", toggle);
+      head.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+    }
     container.appendChild(div);
   });
 }
